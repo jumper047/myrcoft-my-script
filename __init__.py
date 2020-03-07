@@ -32,8 +32,8 @@ class myscriptskill(MycroftSkill):
         
         try:
             LOGGER.info("Executing command:%s %s %s", cmd_name, dev_name, act_name)
-            if dev_name == "light"
-            subprocess.run("wget", "-O", "-", "{ip}/cm?cmnd=Power%20{cmd}".format(ip=self.settings['lampaddr'], cmd=act_name))
+            if dev_name == "light":
+                subprocess.run("wget", "-O", "-", "{ip}/cm?cmnd=Power%20{cmd}".format(ip=self.settings['lampaddr'], cmd=act_name))
         except Exception as e:
             LOGGER.info("Exception raised while publishing command: %s", e)
             self.speak_dialog("not.found", {"command": cmd_name, "action": act_name, "module": dev_name})
